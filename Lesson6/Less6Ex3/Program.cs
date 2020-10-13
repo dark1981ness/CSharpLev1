@@ -102,6 +102,8 @@ namespace Less6Ex3
             Console.WriteLine($"Отсортированные студенты по курсу и возрасту");
             foreach (var v in list) Console.WriteLine($"{v.firstName} {v.age} {v.course}");
             Console.WriteLine();
+            Console.WriteLine($"студенты в возрасте от 18 до 20 лет");
+            foreach (KeyValuePair<int, int> keyValuePair in frecDic) Console.WriteLine($"На {keyValuePair.Key} курсе обучаются {keyValuePair.Value} студентов");
             Console.ReadKey();
 
         }
