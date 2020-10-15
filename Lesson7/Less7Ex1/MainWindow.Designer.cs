@@ -53,6 +53,9 @@
             this.mainMenu.Size = new System.Drawing.Size(490, 33);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "mainMenu";
+            this.mainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainMenu_MouseDown);
+            this.mainMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainMenu_MouseMove);
+            this.mainMenu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mainMenu_MouseUp);
             // 
             // File
             // 
@@ -69,7 +72,7 @@
             // 
             this.Exit.ForeColor = System.Drawing.SystemColors.Control;
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(180, 30);
+            this.Exit.Size = new System.Drawing.Size(138, 30);
             this.Exit.Text = "Выход";
             this.Exit.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 

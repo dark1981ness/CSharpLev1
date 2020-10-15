@@ -12,6 +12,9 @@ namespace Less7Ex1
 {
     public partial class MainWindow : Form
     {
+        private bool mouseDown;
+        private Point lastLocation;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -37,7 +40,7 @@ namespace Less7Ex1
 
         private void GuessNumber_Click(object sender, EventArgs e)
         {
-            Form guessNumbers = new GuessNumbers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            Form guessNumbers = new GuessNumbers(3, 0, 100) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             CloseFormsInsidePanel(mainPanel);
             this.mainPanel.Controls.Add(guessNumbers);
             guessNumbers.Show();
@@ -45,8 +48,7 @@ namespace Less7Ex1
 
         private void About_Click(object sender, EventArgs e)
         {
-            int formsCount = Application.OpenForms.Count;
-            MessageBox.Show(formsCount.ToString());
+            MessageBox.Show($"ДЗ к 7 уроку.\nВыполнил Носков Константин.");
         }
 
         private void CloseFormsInsidePanel(Panel panel)
@@ -60,6 +62,28 @@ namespace Less7Ex1
                     newItem.Close();
                 }
             }
+        }
+
+        private void mainMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void mainMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void mainMenu_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

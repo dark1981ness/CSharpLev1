@@ -28,32 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.btnStartGame = new System.Windows.Forms.Button();
-            this.manePanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblUserResult = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.manePanel.SuspendLayout();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.lblTryCount = new System.Windows.Forms.Label();
+            this.lblTryHeader = new System.Windows.Forms.Label();
+            this.lblHiddenNumber = new System.Windows.Forms.Label();
+            this.lblCompareResult = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.btnUserTurn = new System.Windows.Forms.Button();
+            this.lblTextBoxHeader = new System.Windows.Forms.Label();
+            this.userNumberTextBox = new System.Windows.Forms.TextBox();
+            this.btnRestart = new System.Windows.Forms.Button();
+            this.lblUserNumber = new System.Windows.Forms.Label();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblHeader
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 40);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Компьютер выберет произвольное число от 0 до 100.\r\nПопробуйте отгадать его за 5 п" +
+            this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblHeader.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblHeader.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblHeader.Location = new System.Drawing.Point(13, 9);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(420, 40);
+            this.lblHeader.TabIndex = 2;
+            this.lblHeader.Text = "Компьютер выберет произвольное число от 0 до 100.\r\nПопробуйте отгадать его за 5 п" +
     "опыток.\r\n";
             // 
             // btnStartGame
@@ -70,120 +72,155 @@
             this.btnStartGame.TabIndex = 4;
             this.btnStartGame.Text = "Поехали!!!";
             this.btnStartGame.UseVisualStyleBackColor = false;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
-            // manePanel
+            // mainPanel
             // 
-            this.manePanel.Controls.Add(this.label6);
-            this.manePanel.Controls.Add(this.label5);
-            this.manePanel.Controls.Add(this.label4);
-            this.manePanel.Controls.Add(this.lblUserResult);
-            this.manePanel.Controls.Add(this.label3);
-            this.manePanel.Controls.Add(this.button1);
-            this.manePanel.Controls.Add(this.label2);
-            this.manePanel.Controls.Add(this.textBox1);
-            this.manePanel.Controls.Add(this.btnStartGame);
-            this.manePanel.Controls.Add(this.label1);
-            this.manePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manePanel.Location = new System.Drawing.Point(0, 0);
-            this.manePanel.Name = "manePanel";
-            this.manePanel.Size = new System.Drawing.Size(465, 480);
-            this.manePanel.TabIndex = 5;
+            this.mainPanel.Controls.Add(this.lblUserNumber);
+            this.mainPanel.Controls.Add(this.btnRestart);
+            this.mainPanel.Controls.Add(this.lblTryCount);
+            this.mainPanel.Controls.Add(this.lblTryHeader);
+            this.mainPanel.Controls.Add(this.lblHiddenNumber);
+            this.mainPanel.Controls.Add(this.lblCompareResult);
+            this.mainPanel.Controls.Add(this.lblResult);
+            this.mainPanel.Controls.Add(this.btnUserTurn);
+            this.mainPanel.Controls.Add(this.lblTextBoxHeader);
+            this.mainPanel.Controls.Add(this.userNumberTextBox);
+            this.mainPanel.Controls.Add(this.btnStartGame);
+            this.mainPanel.Controls.Add(this.lblHeader);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(465, 480);
+            this.mainPanel.TabIndex = 5;
             // 
-            // textBox1
+            // lblTryCount
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(32, 189);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 75);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblTryCount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTryCount.AutoSize = true;
+            this.lblTryCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTryCount.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTryCount.Location = new System.Drawing.Point(190, 363);
+            this.lblTryCount.Name = "lblTryCount";
+            this.lblTryCount.Size = new System.Drawing.Size(0, 69);
+            this.lblTryCount.TabIndex = 14;
             // 
-            // label2
+            // lblTryHeader
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(28, 166);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Введите число:";
+            this.lblTryHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTryHeader.AutoSize = true;
+            this.lblTryHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTryHeader.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTryHeader.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTryHeader.Location = new System.Drawing.Point(156, 343);
+            this.lblTryHeader.Name = "lblTryHeader";
+            this.lblTryHeader.Size = new System.Drawing.Size(151, 20);
+            this.lblTryHeader.TabIndex = 13;
+            this.lblTryHeader.Text = "Осталось попыток";
             // 
-            // button1
+            // lblHiddenNumber
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(33, 268);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(113, 35);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Жмяк";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lblHiddenNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHiddenNumber.AutoSize = true;
+            this.lblHiddenNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblHiddenNumber.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblHiddenNumber.Location = new System.Drawing.Point(333, 188);
+            this.lblHiddenNumber.Name = "lblHiddenNumber";
+            this.lblHiddenNumber.Size = new System.Drawing.Size(0, 63);
+            this.lblHiddenNumber.TabIndex = 12;
+            this.lblHiddenNumber.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label3
+            // lblCompareResult
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(257, 166);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Результат:";
+            this.lblCompareResult.AutoSize = true;
+            this.lblCompareResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCompareResult.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCompareResult.Location = new System.Drawing.Point(255, 188);
+            this.lblCompareResult.Name = "lblCompareResult";
+            this.lblCompareResult.Size = new System.Drawing.Size(57, 63);
+            this.lblCompareResult.TabIndex = 11;
+            this.lblCompareResult.Text = "?";
             // 
-            // lblUserResult
+            // lblResult
             // 
-            this.lblUserResult.AutoSize = true;
-            this.lblUserResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUserResult.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUserResult.Location = new System.Drawing.Point(190, 195);
-            this.lblUserResult.Name = "lblUserResult";
-            this.lblUserResult.Size = new System.Drawing.Size(65, 69);
-            this.lblUserResult.TabIndex = 11;
-            this.lblUserResult.Text = "<";
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblResult.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblResult.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblResult.Location = new System.Drawing.Point(340, 166);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(93, 20);
+            this.lblResult.TabIndex = 9;
+            this.lblResult.Text = "Результат:";
             // 
-            // label4
+            // btnUserTurn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(289, 195);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 69);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "999";
+            this.btnUserTurn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnUserTurn.Enabled = false;
+            this.btnUserTurn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUserTurn.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnUserTurn.Location = new System.Drawing.Point(12, 269);
+            this.btnUserTurn.Name = "btnUserTurn";
+            this.btnUserTurn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnUserTurn.Size = new System.Drawing.Size(113, 35);
+            this.btnUserTurn.TabIndex = 7;
+            this.btnUserTurn.Text = "Жмяк";
+            this.btnUserTurn.UseVisualStyleBackColor = false;
+            this.btnUserTurn.Click += new System.EventHandler(this.btnUserTurn_Click);
             // 
-            // label5
+            // lblTextBoxHeader
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(156, 343);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Осталось попыток";
+            this.lblTextBoxHeader.AutoSize = true;
+            this.lblTextBoxHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTextBoxHeader.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTextBoxHeader.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTextBoxHeader.Location = new System.Drawing.Point(13, 166);
+            this.lblTextBoxHeader.Name = "lblTextBoxHeader";
+            this.lblTextBoxHeader.Size = new System.Drawing.Size(129, 20);
+            this.lblTextBoxHeader.TabIndex = 6;
+            this.lblTextBoxHeader.Text = "Введите число:";
             // 
-            // label6
+            // userNumberTextBox
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(190, 363);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 69);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "5";
+            this.userNumberTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.userNumberTextBox.Enabled = false;
+            this.userNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userNumberTextBox.ForeColor = System.Drawing.SystemColors.Control;
+            this.userNumberTextBox.Location = new System.Drawing.Point(12, 185);
+            this.userNumberTextBox.MaxLength = 3;
+            this.userNumberTextBox.Name = "userNumberTextBox";
+            this.userNumberTextBox.Size = new System.Drawing.Size(114, 68);
+            this.userNumberTextBox.TabIndex = 5;
+            this.userNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userNumberTextBox.TextChanged += new System.EventHandler(this.userNumberTextBox_TextChanged);
+            // 
+            // btnRestart
+            // 
+            this.btnRestart.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnRestart.Enabled = false;
+            this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRestart.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRestart.Location = new System.Drawing.Point(301, 61);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRestart.Size = new System.Drawing.Size(155, 46);
+            this.btnRestart.TabIndex = 15;
+            this.btnRestart.Text = "Сброс";
+            this.btnRestart.UseVisualStyleBackColor = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
+            // lblUserNumber
+            // 
+            this.lblUserNumber.AutoSize = true;
+            this.lblUserNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUserNumber.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblUserNumber.Location = new System.Drawing.Point(132, 188);
+            this.lblUserNumber.Name = "lblUserNumber";
+            this.lblUserNumber.Size = new System.Drawing.Size(0, 63);
+            this.lblUserNumber.TabIndex = 16;
             // 
             // GuessNumbers
             // 
@@ -191,27 +228,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.ClientSize = new System.Drawing.Size(465, 480);
-            this.Controls.Add(this.manePanel);
+            this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuessNumbers";
             this.Text = "GuessNumbers";
-            this.manePanel.ResumeLayout(false);
-            this.manePanel.PerformLayout();
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnStartGame;
-        private System.Windows.Forms.Panel manePanel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblUserResult;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Label lblTextBoxHeader;
+        private System.Windows.Forms.TextBox userNumberTextBox;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Button btnUserTurn;
+        private System.Windows.Forms.Label lblHiddenNumber;
+        private System.Windows.Forms.Label lblCompareResult;
+        private System.Windows.Forms.Label lblTryCount;
+        private System.Windows.Forms.Label lblTryHeader;
+        private System.Windows.Forms.Button btnRestart;
+        private System.Windows.Forms.Label lblUserNumber;
     }
 }

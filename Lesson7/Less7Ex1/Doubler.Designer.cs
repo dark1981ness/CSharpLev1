@@ -41,6 +41,7 @@
             this.lblForRandomNum = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnNewGame = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,12 +56,12 @@
             this.lblNumber.Size = new System.Drawing.Size(150, 20);
             this.lblNumber.TabIndex = 0;
             this.lblNumber.Text = "Должны получить:";
-            this.lblNumber.Click += new System.EventHandler(this.lblNumber_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnAdd.Enabled = false;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Control;
@@ -70,11 +71,13 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "+1";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnMulti
             // 
             this.btnMulti.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnMulti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnMulti.Enabled = false;
             this.btnMulti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMulti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMulti.ForeColor = System.Drawing.SystemColors.Control;
@@ -84,11 +87,13 @@
             this.btnMulti.TabIndex = 2;
             this.btnMulti.Text = "х2";
             this.btnMulti.UseVisualStyleBackColor = false;
+            this.btnMulti.Click += new System.EventHandler(this.btnMulti_Click);
             // 
             // btnClear
             // 
             this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnClear.Enabled = false;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
@@ -98,11 +103,13 @@
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Сброс";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUndo
             // 
             this.btnUndo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnUndo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnUndo.Enabled = false;
             this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUndo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnUndo.ForeColor = System.Drawing.SystemColors.Control;
@@ -112,6 +119,7 @@
             this.btnUndo.TabIndex = 4;
             this.btnUndo.Text = "Отменить ход";
             this.btnUndo.UseVisualStyleBackColor = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // lblUserResult
             // 
@@ -120,9 +128,9 @@
             this.lblUserResult.ForeColor = System.Drawing.SystemColors.Control;
             this.lblUserResult.Location = new System.Drawing.Point(113, 74);
             this.lblUserResult.Name = "lblUserResult";
-            this.lblUserResult.Size = new System.Drawing.Size(162, 69);
+            this.lblUserResult.Size = new System.Drawing.Size(63, 69);
             this.lblUserResult.TabIndex = 5;
-            this.lblUserResult.Text = "9999";
+            this.lblUserResult.Text = "0";
             // 
             // btnStartGame
             // 
@@ -137,6 +145,7 @@
             this.btnStartGame.TabIndex = 6;
             this.btnStartGame.Text = "Играть";
             this.btnStartGame.UseVisualStyleBackColor = false;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // panel1
             // 
@@ -188,6 +197,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnNewGame);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnStartGame);
             this.panel2.Controls.Add(this.btnUndo);
@@ -213,6 +223,22 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Компьютер выберет произвольное число от 0 до 1000.\r\nПопробуйте получить это число" +
     " при помощи операций\r\n\"+1\" и \"х2\" за минимальное число попыток.\r\n";
+            // 
+            // btnNewGame
+            // 
+            this.btnNewGame.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnNewGame.Enabled = false;
+            this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnNewGame.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnNewGame.Location = new System.Drawing.Point(272, 85);
+            this.btnNewGame.Name = "btnNewGame";
+            this.btnNewGame.Size = new System.Drawing.Size(153, 39);
+            this.btnNewGame.TabIndex = 8;
+            this.btnNewGame.Text = "Начать заново";
+            this.btnNewGame.UseVisualStyleBackColor = false;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // Doubler
             // 
@@ -248,5 +274,6 @@
         private System.Windows.Forms.Label lblStep;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNewGame;
     }
 }
