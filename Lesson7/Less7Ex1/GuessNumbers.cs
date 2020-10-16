@@ -57,11 +57,15 @@ namespace Less7Ex1
 
         private void btnUserTurn_Click(object sender, EventArgs e)
         {
-            UserNumber = int.Parse(userNumberTextBox.Text);
-            lblUserNumber.Text = UserNumber.ToString();
-            _testTryCount--;
-            CompareAnswer(_testTryCount, MyRandomValue, UserNumber);
-            userNumberTextBox.Clear();
+            if(userNumberTextBox.Text != String.Empty)
+            {
+                UserNumber = int.Parse(userNumberTextBox.Text);
+                lblUserNumber.Text = UserNumber.ToString();
+                _testTryCount--;
+                CompareAnswer(_testTryCount, MyRandomValue, UserNumber);
+                userNumberTextBox.Clear();
+            }
+            
             
         }
 
@@ -83,6 +87,8 @@ namespace Less7Ex1
                 lblCompareResult.Text = "=";
                 lblHiddenNumber.Text = randomValue.ToString();
                 btnRestart.Enabled = true;
+                userNumberTextBox.Enabled = false;
+                btnUserTurn.Enabled = false;
             }
             else if (userNumber < randomValue)
             {
@@ -120,6 +126,18 @@ namespace Less7Ex1
         private void userNumberTextBox_TextChanged(object sender, EventArgs e)
         {
             userNumberTextBox.Text = regex.Replace(userNumberTextBox.Text, "");
+            if(userNumberTextBox.Text != String.Empty)
+            {
+                if (int.Parse(userNumberTextBox.Text) >= EndPoint)
+                {
+                    userNumberTextBox.Text = EndPoint.ToString();
+                }
+                else if (int.Parse(userNumberTextBox.Text) < StartPoint)
+                {
+                    userNumberTextBox.Text = StartPoint.ToString();
+                }
+            }
+            
         }
 
         /// <summary>
