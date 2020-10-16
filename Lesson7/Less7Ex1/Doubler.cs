@@ -13,10 +13,32 @@ namespace Less7Ex1
     public partial class Doubler : Form
     {
         private int counter = 0;
-        Stack<int> userRes = new Stack<int>();
+
+        public int EndPoint { get; private set; }
+
+        public int StartPoint { get; private set; }
+
+        public int MyRandomValue { get; private set; }
+
+        Stack<int> userRes;
+
+        Dictionary<string, Button> btnDic;
+
         public Doubler()
         {
             InitializeComponent();
+            userRes = new Stack<int>();
+            StartPoint = 0;
+            EndPoint = 100;
+        }
+
+        public Doubler(int startPoint, int endPoint)
+        {
+            InitializeComponent();
+            userRes = new Stack<int>();
+            StartPoint = startPoint;
+            EndPoint = endPoint;
+            btnDic = PutButtonsToDic(panel2);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -42,24 +64,20 @@ namespace Less7Ex1
             lblUserResult.Text = "0";
             counter = 0;
             lblUserStepCount.Text = counter.ToString();
-            btnAdd.Enabled = true;
-            btnMulti.Enabled = true;
+            btnDic["btnAdd"].Enabled = true;
+            btnDic["btnMulti"].Enabled = true;
         }
 
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-            
-            int startPoint = 0;
-            int endPoint = 100;
-            Random random = new Random();
-            int randomNumber = random.Next(startPoint, endPoint);
-            lblForRandomNum.Text = randomNumber.ToString();
-            btnStartGame.Enabled = false;
-            btnNewGame.Enabled = true;
-            btnAdd.Enabled = true;
-            btnMulti.Enabled = true;
-            btnClear.Enabled = true;
-            btnUndo.Enabled = true;
+            MyRandomValue = RandomValue(StartPoint, EndPoint);
+            lblForRandomNum.Text = MyRandomValue.ToString();
+            btnDic["btnStartGame"].Enabled = false;
+            btnDic["btnNewGame"].Enabled = true;
+            btnDic["btnAdd"].Enabled = true;
+            btnDic["btnMulti"].Enabled = true;
+            btnDic["btnClear"].Enabled = true;
+            btnDic["btnUndo"].Enabled = true;
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
@@ -67,12 +85,12 @@ namespace Less7Ex1
             lblUserResult.Text = "0";
             lblUserStepCount.Text = "0";
             lblForRandomNum.Text = "0";
-            btnStartGame.Enabled = true;
-            btnAdd.Enabled = false;
-            btnMulti.Enabled = false;
-            btnClear.Enabled = false;
-            btnUndo.Enabled = false;
-            btnNewGame.Enabled = false;
+            btnDic["btnStartGame"].Enabled = true;
+            btnDic["btnNewGame"].Enabled = false;
+            btnDic["btnAdd"].Enabled = false;
+            btnDic["btnMulti"].Enabled = false;
+            btnDic["btnClear"].Enabled = false;
+            btnDic["btnUndo"].Enabled = false;
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -81,25 +99,64 @@ namespace Less7Ex1
             lblUserResult.Text = userRes.Peek().ToString();
             if (int.Parse(lblUserResult.Text) < int.Parse(lblForRandomNum.Text))
             {
-                btnAdd.Enabled = true;
-                btnMulti.Enabled = true;
+                btnDic["btnAdd"].Enabled = true;
+                btnDic["btnMulti"].Enabled = true;
             }
 
         }
 
+        /// <summary>
+        /// сравнение получаемого значения с сгенерированным
+        /// </summary>
         private void CheckResult()
         {
             if (int.Parse(lblUserResult.Text) > int.Parse(lblForRandomNum.Text))
             {
-                btnAdd.Enabled = false;
-                btnMulti.Enabled = false;
+                btnDic["btnAdd"].Enabled = false;
+                btnDic["btnMulti"].Enabled = false;
             }
             else if (int.Parse(lblUserResult.Text) == int.Parse(lblForRandomNum.Text))
             {
-                btnAdd.Enabled = false;
-                btnMulti.Enabled = false;
-                btnUndo.Enabled = false;
+                btnDic["btnAdd"].Enabled = false;
+                btnDic["btnMulti"].Enabled = false;
+                btnDic["btnUndo"].Enabled = false;
             }
         }
+
+        /// <summary>
+        /// генерация случайного числа в заланном диапазоне
+        /// </summary>
+        /// <param name="startPoint"></param>
+        /// <param name="endPoint"></param>
+        /// <returns></returns>
+        private int RandomValue(int startPoint, int endPoint)
+        {
+            Random random = new Random();
+            return random.Next(startPoint, endPoint);
+        }
+
+        #region test
+
+        /// <summary>
+        /// Публикация кнопок, размещенных на Panel в словарь
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <returns></returns>
+        private Dictionary<string, Button> PutButtonsToDic(Panel panel)
+        {
+            Dictionary<string, Button> dicOfButtons = new Dictionary<string, Button>();
+            var fCount = panel.Controls;
+            foreach (var item in fCount)
+            {
+                if (item is Button)
+                {
+                    Button newItem = item as Button;
+                    dicOfButtons.Add(newItem.Name, newItem);
+                }
+            }
+            return dicOfButtons;
+        }
+
+        #endregion
     }
 }

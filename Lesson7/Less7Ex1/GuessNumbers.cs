@@ -25,8 +25,6 @@ namespace Less7Ex1
 
         public int UserNumber { get; private set; }
 
-        Random random = new Random();
-
         Regex regex = new Regex(@"\D", RegexOptions.IgnoreCase);
 
         public GuessNumbers()
@@ -48,7 +46,7 @@ namespace Less7Ex1
 
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-            MyRandomValue = random.Next(StartPoint, EndPoint);
+            MyRandomValue = RandomValue(StartPoint, EndPoint);
             lblHiddenNumber.Text = "?";
             lblTryCount.Text = TryCount.ToString();
             userNumberTextBox.Enabled = true;
@@ -67,6 +65,12 @@ namespace Less7Ex1
             
         }
 
+        /// <summary>
+        /// Метод сравнения значений 
+        /// </summary>
+        /// <param name="tryCount">попытки</param>
+        /// <param name="randomValue">сгенерированное значение</param>
+        /// <param name="userNumber">значение, полученное из TextBox </param>
         private void CompareAnswer(int tryCount, int randomValue, int userNumber)
         {
             lblTryCount.Text = tryCount.ToString();
@@ -108,9 +112,26 @@ namespace Less7Ex1
             _testTryCount = TryCount;
         }
 
+        /// <summary>
+        /// проверка поля ввода
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void userNumberTextBox_TextChanged(object sender, EventArgs e)
         {
             userNumberTextBox.Text = regex.Replace(userNumberTextBox.Text, "");
+        }
+
+        /// <summary>
+        /// генерация случайного числа в заланном диапазоне
+        /// </summary>
+        /// <param name="startPoint"></param>
+        /// <param name="endPoint"></param>
+        /// <returns></returns>
+        private int RandomValue(int startPoint, int endPoint)
+        {
+            Random random = new Random();
+            return random.Next(startPoint, endPoint);
         }
     }
 }

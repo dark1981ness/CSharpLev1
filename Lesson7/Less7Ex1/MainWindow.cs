@@ -32,7 +32,7 @@ namespace Less7Ex1
 
         private void Doubler_Click(object sender, EventArgs e)
         {
-            Form doubler = new Doubler() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            Form doubler = new Doubler(0, 100) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             CloseFormsInsidePanel(mainPanel);
             this.mainPanel.Controls.Add(doubler);
             doubler.Show();
@@ -40,7 +40,7 @@ namespace Less7Ex1
 
         private void GuessNumber_Click(object sender, EventArgs e)
         {
-            Form guessNumbers = new GuessNumbers(3, 0, 100) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            Form guessNumbers = new GuessNumbers(5, 0, 100) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             CloseFormsInsidePanel(mainPanel);
             this.mainPanel.Controls.Add(guessNumbers);
             guessNumbers.Show();
@@ -48,9 +48,13 @@ namespace Less7Ex1
 
         private void About_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"ДЗ к 7 уроку.\nВыполнил Носков Константин.");
+            //MessageBox.Show($"ДЗ к 7 уроку.\nВыполнил Носков Константин.");
         }
 
+        /// <summary>
+        /// Закрываем дочерние формы панели
+        /// </summary>
+        /// <param name="panel"></param>
         private void CloseFormsInsidePanel(Panel panel)
         {
             var fCount = panel.Controls;
@@ -64,6 +68,7 @@ namespace Less7Ex1
             }
         }
 
+        #region DragMove метод, не очень удачный, скорее всего
         private void mainMenu_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
@@ -84,6 +89,23 @@ namespace Less7Ex1
         private void mainMenu_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        #endregion
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            btnClose.ForeColor = Color.White;
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            btnClose.ForeColor = Color.Black;
         }
     }
 }
