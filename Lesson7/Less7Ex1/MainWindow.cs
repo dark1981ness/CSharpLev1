@@ -48,7 +48,7 @@ namespace Less7Ex1
 
         private void About_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show($"ДЗ к 7 уроку.\nВыполнил Носков Константин.");
+            MessageBox.Show($"ДЗ к 7 уроку.\nВыполнил Носков Константин.");
         }
 
         /// <summary>

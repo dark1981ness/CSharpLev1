@@ -72,6 +72,7 @@ namespace Less7Ex1
         {
             MyRandomValue = RandomValue(StartPoint, EndPoint);
             lblForRandomNum.Text = MyRandomValue.ToString();
+            
             btnDic["btnStartGame"].Enabled = false;
             btnDic["btnNewGame"].Enabled = true;
             btnDic["btnAdd"].Enabled = true;
@@ -85,6 +86,7 @@ namespace Less7Ex1
             lblUserResult.Text = "0";
             lblUserStepCount.Text = "0";
             lblForRandomNum.Text = "0";
+            lblMinCount.Text = "?";
             btnDic["btnStartGame"].Enabled = true;
             btnDic["btnNewGame"].Enabled = false;
             btnDic["btnAdd"].Enabled = false;
@@ -96,7 +98,9 @@ namespace Less7Ex1
         private void btnUndo_Click(object sender, EventArgs e)
         {
             userRes.Pop();
+            counter--;
             lblUserResult.Text = userRes.Peek().ToString();
+            lblUserStepCount.Text = counter.ToString();
             if (int.Parse(lblUserResult.Text) < int.Parse(lblForRandomNum.Text))
             {
                 btnDic["btnAdd"].Enabled = true;
@@ -114,12 +118,14 @@ namespace Less7Ex1
             {
                 btnDic["btnAdd"].Enabled = false;
                 btnDic["btnMulti"].Enabled = false;
+                lblMinCount.Text = TryCount(MyRandomValue).ToString();
             }
             else if (int.Parse(lblUserResult.Text) == int.Parse(lblForRandomNum.Text))
             {
                 btnDic["btnAdd"].Enabled = false;
                 btnDic["btnMulti"].Enabled = false;
                 btnDic["btnUndo"].Enabled = false;
+                lblMinCount.Text = TryCount(MyRandomValue).ToString();
             }
         }
 
@@ -158,5 +164,31 @@ namespace Less7Ex1
         }
 
         #endregion
+
+        /// <summary>
+        /// Минимальное число попыток получения числа
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private int TryCount(int value)
+        {
+            int count = 0;
+
+            while(value > 0)
+            {
+                if (value % 2 == 0)
+                {
+                    count++;
+                    value /= 2;
+                }
+                else if (value%2 != 0)
+                {
+                    count++;
+                    value -= 1;
+                }
+            }
+
+            return count;
+        }
     }
 }
