@@ -35,7 +35,6 @@
             this.Doubler = new System.Windows.Forms.ToolStripMenuItem();
             this.GuessNumber = new System.Windows.Forms.ToolStripMenuItem();
             this.About = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.mainMenu.SuspendLayout();
@@ -69,7 +68,7 @@
             this.File.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.File.ForeColor = System.Drawing.SystemColors.Control;
             this.File.Name = "File";
-            this.File.Size = new System.Drawing.Size(53, 31);
+            this.File.Size = new System.Drawing.Size(53, 29);
             this.File.Text = "Файл";
             // 
             // Exit
@@ -88,14 +87,14 @@
             this.Programms.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Programms.ForeColor = System.Drawing.SystemColors.Control;
             this.Programms.Name = "Programms";
-            this.Programms.Size = new System.Drawing.Size(97, 31);
+            this.Programms.Size = new System.Drawing.Size(97, 29);
             this.Programms.Text = "Программы";
             // 
             // Doubler
             // 
             this.Doubler.ForeColor = System.Drawing.SystemColors.Control;
             this.Doubler.Name = "Doubler";
-            this.Doubler.Size = new System.Drawing.Size(162, 24);
+            this.Doubler.Size = new System.Drawing.Size(180, 24);
             this.Doubler.Text = "Удвоитель";
             this.Doubler.Click += new System.EventHandler(this.Doubler_Click);
             // 
@@ -103,7 +102,7 @@
             // 
             this.GuessNumber.ForeColor = System.Drawing.SystemColors.Control;
             this.GuessNumber.Name = "GuessNumber";
-            this.GuessNumber.Size = new System.Drawing.Size(162, 24);
+            this.GuessNumber.Size = new System.Drawing.Size(180, 24);
             this.GuessNumber.Text = "Угадай число";
             this.GuessNumber.Click += new System.EventHandler(this.GuessNumber_Click);
             // 
@@ -112,18 +111,9 @@
             this.About.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.About.ForeColor = System.Drawing.SystemColors.Control;
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(107, 31);
+            this.About.Size = new System.Drawing.Size(107, 29);
             this.About.Text = "О программе";
             this.About.Click += new System.EventHandler(this.About_Click);
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mainPanel.Location = new System.Drawing.Point(0, 38);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(490, 492);
-            this.mainPanel.TabIndex = 4;
             // 
             // panel1
             // 
@@ -160,9 +150,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(490, 530);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.mainPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Homework";
@@ -183,7 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem Doubler;
         private System.Windows.Forms.ToolStripMenuItem GuessNumber;
         private System.Windows.Forms.ToolStripMenuItem About;
-        private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClose;
     }
