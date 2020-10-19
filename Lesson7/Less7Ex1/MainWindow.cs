@@ -32,18 +32,32 @@ namespace Less7Ex1
 
         private void Doubler_Click(object sender, EventArgs e)
         {
-            Form doubler = new Doubler(1, 100) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //CloseFormsInsidePanel(mainPanel);
-            //this.mainPanel.Controls.Add(doubler);
+            CloseFormsInsidePanel();
+            Form doubler = new Doubler(1, 100) { Dock = DockStyle.Fill, TopLevel = true, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            doubler.MdiParent = this;
             doubler.Show();
+            doubler.Location = new Point(0, 0);
         }
 
         private void GuessNumber_Click(object sender, EventArgs e)
         {
-            Form guessNumbers = new GuessNumbers(5, 0, 100) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            //CloseFormsInsidePanel(mainPanel);
-            //this.mainPanel.Controls.Add(guessNumbers);
+            CloseFormsInsidePanel();
+            Form guessNumbers = new GuessNumbers(5, 0, 100) { Dock = DockStyle.Fill, TopLevel = true, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            guessNumbers.MdiParent = this;
             guessNumbers.Show();
+            guessNumbers.Location = new Point(0, 0);
+        }
+
+        private void bdEdit_Click(object sender, EventArgs e)
+        {
+            CloseFormsInsidePanel();
+            Form bnbEdit = new BelieveOrNotBelieve() { Dock = DockStyle.Fill, TopLevel = true, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            bnbEdit.MdiParent = this;
+            ToolStripManager.Merge((ToolStrip)bnbEdit.Controls.Find("toolStripBnB", true).FirstOrDefault() , this.mainMenu);
+            bnbEdit.FormClosed += (s, ev) => { ToolStripManager.RevertMerge(this.mainMenu, (ToolStrip)bnbEdit.Controls.Find("toolStripBnB", true).FirstOrDefault()); };
+            //bnbEdit.Controls.Remove((ToolStrip)bnbEdit.Controls.Find("toolStripBnB", false).FirstOrDefault());
+            bnbEdit.Show();
+            bnbEdit.Location = new Point(0, 0);
         }
 
         private void About_Click(object sender, EventArgs e)
@@ -65,6 +79,16 @@ namespace Less7Ex1
                     Form newItem = item as Form;
                     newItem.Close();
                 }
+            }
+        }
+
+
+        private void CloseFormsInsidePanel()
+        {
+            
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Dispose();
             }
         }
 
@@ -107,5 +131,7 @@ namespace Less7Ex1
         {
             btnClose.ForeColor = Color.Black;
         }
+
+        
     }
 }

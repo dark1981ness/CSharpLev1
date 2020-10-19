@@ -74,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="TrueFalse.cs" />
+    <EmbeddedResource Include="BelieveOrNotBelieve.resx">
+      <DependentUpon>BelieveOrNotBelieve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doubler.resx">
       <DependentUpon>Doubler.cs</DependentUpon>
     </EmbeddedResource>

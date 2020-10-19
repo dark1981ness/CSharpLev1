@@ -13,7 +13,6 @@ C:\Users\k.noskov\source\repos\HomeWork\Less7Ex1\obj\Debug\Less7Ex1.csprojAssemb
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\bin\Debug\Less7Ex1.exe.config
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\bin\Debug\Less7Ex1.exe
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\bin\Debug\Less7Ex1.pdb
-E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.csprojAssemblyReference.cache
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.Doubler.resources
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.GuessNumbers.resources
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.MainWindow.resources
@@ -22,3 +21,5 @@ E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.csproj.GenerateResour
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.csproj.CoreCompileInputs.cache
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.exe
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.pdb
+E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.BelieveOrNotBelieve.resources
+E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.csprojAssemblyReference.cache

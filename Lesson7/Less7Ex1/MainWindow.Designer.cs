@@ -34,6 +34,9 @@
             this.Programms = new System.Windows.Forms.ToolStripMenuItem();
             this.Doubler = new System.Windows.Forms.ToolStripMenuItem();
             this.GuessNumber = new System.Windows.Forms.ToolStripMenuItem();
+            this.BelieveOrNotBelieve = new System.Windows.Forms.ToolStripMenuItem();
+            this.startGame = new System.Windows.Forms.ToolStripMenuItem();
+            this.bdEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.About = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -53,7 +56,7 @@
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.mainMenu.Size = new System.Drawing.Size(488, 33);
+            this.mainMenu.Size = new System.Drawing.Size(889, 33);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "mainMenu";
             this.mainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainMenu_MouseDown);
@@ -83,7 +86,8 @@
             // 
             this.Programms.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Doubler,
-            this.GuessNumber});
+            this.GuessNumber,
+            this.BelieveOrNotBelieve});
             this.Programms.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.Programms.ForeColor = System.Drawing.SystemColors.Control;
             this.Programms.Name = "Programms";
@@ -94,7 +98,7 @@
             // 
             this.Doubler.ForeColor = System.Drawing.SystemColors.Control;
             this.Doubler.Name = "Doubler";
-            this.Doubler.Size = new System.Drawing.Size(180, 24);
+            this.Doubler.Size = new System.Drawing.Size(186, 24);
             this.Doubler.Text = "Удвоитель";
             this.Doubler.Click += new System.EventHandler(this.Doubler_Click);
             // 
@@ -102,9 +106,34 @@
             // 
             this.GuessNumber.ForeColor = System.Drawing.SystemColors.Control;
             this.GuessNumber.Name = "GuessNumber";
-            this.GuessNumber.Size = new System.Drawing.Size(180, 24);
+            this.GuessNumber.Size = new System.Drawing.Size(186, 24);
             this.GuessNumber.Text = "Угадай число";
             this.GuessNumber.Click += new System.EventHandler(this.GuessNumber_Click);
+            // 
+            // BelieveOrNotBelieve
+            // 
+            this.BelieveOrNotBelieve.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startGame,
+            this.bdEdit});
+            this.BelieveOrNotBelieve.ForeColor = System.Drawing.SystemColors.Control;
+            this.BelieveOrNotBelieve.Name = "BelieveOrNotBelieve";
+            this.BelieveOrNotBelieve.Size = new System.Drawing.Size(186, 24);
+            this.BelieveOrNotBelieve.Text = "Верю — не верю";
+            // 
+            // startGame
+            // 
+            this.startGame.ForeColor = System.Drawing.SystemColors.Control;
+            this.startGame.Name = "startGame";
+            this.startGame.Size = new System.Drawing.Size(194, 24);
+            this.startGame.Text = "Играть";
+            // 
+            // bdEdit
+            // 
+            this.bdEdit.ForeColor = System.Drawing.SystemColors.Control;
+            this.bdEdit.Name = "bdEdit";
+            this.bdEdit.Size = new System.Drawing.Size(194, 24);
+            this.bdEdit.Text = "Редактировать БД";
+            this.bdEdit.Click += new System.EventHandler(this.bdEdit_Click);
             // 
             // About
             // 
@@ -123,7 +152,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(490, 35);
+            this.panel1.Size = new System.Drawing.Size(891, 35);
             this.panel1.TabIndex = 5;
             // 
             // btnClose
@@ -132,7 +161,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(444, 0);
+            this.btnClose.Location = new System.Drawing.Point(845, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(44, 33);
@@ -148,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(490, 530);
+            this.ClientSize = new System.Drawing.Size(891, 530);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -175,5 +204,8 @@
         private System.Windows.Forms.ToolStripMenuItem About;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ToolStripMenuItem BelieveOrNotBelieve;
+        private System.Windows.Forms.ToolStripMenuItem startGame;
+        private System.Windows.Forms.ToolStripMenuItem bdEdit;
     }
 }

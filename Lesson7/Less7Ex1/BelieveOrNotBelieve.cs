@@ -20,13 +20,13 @@ namespace Less7Ex1
             InitializeComponent();
         }
 
-        // Обработчик пункта меню Exit
-        private void miExit_Click(object sender, EventArgs e)
+        //Обработчик пункта меню Exit
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         // Обработчик пункта меню New
-        private void miNew_Click(object sender, EventArgs e)
+        private void btnNew_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
             if (sfd.ShowDialog() == DialogResult.OK)
@@ -42,7 +42,7 @@ namespace Less7Ex1
         // Обработчик события изменения значения numericUpDown
         private void nudNumber_ValueChanged(object sender, EventArgs e)
         {
-            tboxQuestion.Text = database[(int)nudNumber.Value - 1].text;
+            textBoxBnB.Text = database[(int)nudNumber.Value - 1].text;
             cboxTrue.Checked = database[(int)nudNumber.Value - 1].trueFalse;
         }
 
@@ -67,13 +67,13 @@ namespace Less7Ex1
             if (nudNumber.Value > 1) nudNumber.Value = nudNumber.Value;
         }
         // Обработчик пункта меню Save
-        private void miSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (database != null) database.Save();
             else MessageBox.Show("База данных не создана");
         }
         // Обработчик пункта меню Open
-        private void miOpen_Click(object sender, EventArgs e)
+        private void btnOpen_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
@@ -88,10 +88,9 @@ namespace Less7Ex1
         // Обработчик кнопки Сохранить (вопрос)
         private void btnSaveQuest_Click(object sender, EventArgs e)
         {
-            database[(int)nudNumber.Value - 1].text = tboxQuestion.Text;
+            database[(int)nudNumber.Value - 1].text = textBoxBnB.Text;
             database[(int)nudNumber.Value - 1].trueFalse = cboxTrue.Checked;
         }
-
-
+        
     }
 }
