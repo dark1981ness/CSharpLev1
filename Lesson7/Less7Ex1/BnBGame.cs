@@ -14,7 +14,7 @@ namespace Less7Ex1
     {
         TrueFalse gameDB;
 
-        public int QuestionIndex { get; set; } = 1;
+        public int QuestionIndex { get; set; } = 0;
         public int DBIndex { get; set; }
         public int GameDBCount { get; set; }
         public bool UserAnswer { get; set; }
@@ -39,34 +39,40 @@ namespace Less7Ex1
 
         private void LoadGameBase()
         {
-            gameDB = new TrueFalse("myDB");
+            gameDB = new TrueFalse("newBD");
             gameDB.Load();
         }
 
         private void btnTrue_Click(object sender, EventArgs e)
         {
-            GetQuestion();
-            UserAnswer = true;
-            CompareAnswers(UserAnswer, BaseAnswer);
+            if(gameDB.Count > 0)
+            {
+                GetQuestion();
+                UserAnswer = true;
+                CompareAnswers(UserAnswer, BaseAnswer);
+                gameDB.Remove(DBIndex);
+            }
         }
 
         private void btnFalse_Click(object sender, EventArgs e)
         {
-            GetQuestion();
-            UserAnswer = false;
-            CompareAnswers(UserAnswer, BaseAnswer);
-            
+            if(gameDB.Count > 0)
+            {
+                GetQuestion();
+                UserAnswer = false;
+                CompareAnswers(UserAnswer, BaseAnswer);
+                gameDB.Remove(DBIndex);
+            }
         }
 
         private void GetQuestion()
         {
+            QuestionIndex++;
             Random random = new Random();
             DBIndex = random.Next(0, gameDB.Count);
             label2.Text = $"{QuestionIndex} из {GameDBCount}";
             lblQuestion.Text = gameDB[DBIndex].text;
             BaseAnswer = gameDB[DBIndex].trueFalse;
-            QuestionIndex++;
-            gameDB.Remove(DBIndex);
         }
 
         private void CompareAnswers(bool userValue, bool baseValue)
@@ -74,12 +80,16 @@ namespace Less7Ex1
             if (userValue == baseValue)
             {
                 RightAnswersCount++;
-                lblTrueAnswerCount.Text = RightAnswersCount.ToString();
+                lblTrueCount.Text = RightAnswersCount.ToString();
+                lblCompareResult.ForeColor = Color.Green;
+                lblCompareResult.Text = "V";
             }
             else
             {
                 WrongAnswersCount++;
-                lblFalseAnswerCount.Text = WrongAnswersCount.ToString();
+                lblFalseCount.Text = WrongAnswersCount.ToString();
+                lblCompareResult.ForeColor = Color.Red;
+                lblCompareResult.Text = "X";
             }
         }
         
