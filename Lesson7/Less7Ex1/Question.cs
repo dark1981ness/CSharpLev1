@@ -3,7 +3,7 @@
 namespace Less7Ex1
 {
     [Serializable]
-    internal class Question
+    public class Question
     {
         public string text;       // Текст вопроса
         public bool trueFalse;// Правда или нет

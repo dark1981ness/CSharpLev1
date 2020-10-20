@@ -51,6 +51,12 @@
     <Compile Include="BelieveOrNotBelieve.Designer.cs">
       <DependentUpon>BelieveOrNotBelieve.cs</DependentUpon>
     </Compile>
+    <Compile Include="BnBGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BnBGame.Designer.cs">
+      <DependentUpon>BnBGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doubler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="TrueFalse.cs" />
     <EmbeddedResource Include="BelieveOrNotBelieve.resx">
       <DependentUpon>BelieveOrNotBelieve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BnBGame.resx">
+      <DependentUpon>BnBGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doubler.resx">
       <DependentUpon>Doubler.cs</DependentUpon>

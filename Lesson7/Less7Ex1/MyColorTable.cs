@@ -26,7 +26,6 @@ namespace Less7Ex1
         public override Color ImageMarginGradientBegin => Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
         public override Color ImageMarginGradientMiddle => Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
         public override Color ImageMarginGradientEnd => Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-
         public override Color ToolStripBorder => Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
         public override Color ToolStripGradientBegin => Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
         public override Color ToolStripGradientMiddle => Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));

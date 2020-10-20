@@ -49,14 +49,20 @@ namespace Less7Ex1
             guessNumbers.Location = new Point(0, 0);
         }
 
+        private void startGame_Click(object sender, EventArgs e)
+        {
+            CloseFormsInsidePanel(mainPanel);
+            Form bnbGame = new BnBGame() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            this.mainPanel.Controls.Add(bnbGame);
+            bnbGame.Show();
+            bnbGame.Location = new Point(0, 0);
+        }
+
         private void bdEdit_Click(object sender, EventArgs e)
         {
             CloseFormsInsidePanel(mainPanel);
             Form bnbEdit = new BelieveOrNotBelieve() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             this.mainPanel.Controls.Add(bnbEdit);
-            //ToolStripManager.Merge((ToolStrip)bnbEdit.Controls.Find("toolStripBnB", true).FirstOrDefault() , this.toolStrip1);
-            //bnbEdit.FormClosed += (s, ev) => { ToolStripManager.RevertMerge(this.toolStrip1, (ToolStrip)bnbEdit.Controls.Find("toolStripBnB", true).FirstOrDefault()); };
-            //bnbEdit.Controls.Remove((ToolStrip)bnbEdit.Controls.Find("toolStripBnB", false).FirstOrDefault());
             bnbEdit.Show();
             bnbEdit.Location = new Point(0, 0);
         }

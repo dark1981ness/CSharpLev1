@@ -4,12 +4,13 @@ using System.Xml.Serialization;
 
 namespace Less7Ex1
 {
-    internal class TrueFalse
+    class TrueFalse
     {
         string fileName;
         List<Question> list;
         public string FileName
         {
+            get { return fileName; }
             set { fileName = value; }
         }
         public TrueFalse(string fileName)

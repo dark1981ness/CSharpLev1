@@ -88,6 +88,7 @@ namespace Less7Ex1
                 nudNumber.Minimum = 1;
                 nudNumber.Maximum = database.Count;
                 nudNumber.Value = 1;
+                BnBdatabase.Text = database.FileName.Split('\\').LastOrDefault();
             }
         }
         // Обработчик кнопки Сохранить (вопрос)
@@ -97,6 +98,14 @@ namespace Less7Ex1
             database[(int)nudNumber.Value - 1].trueFalse = cboxTrue.Checked;
         }
 
-        
+        private void btnSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                database.FileName = sfd.FileName;
+                database.Save();
+            };
+        }
     }
 }

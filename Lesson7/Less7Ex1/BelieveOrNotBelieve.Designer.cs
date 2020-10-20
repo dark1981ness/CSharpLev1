@@ -42,9 +42,11 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnSaveAs = new System.Windows.Forms.ToolStripButton();
             this.btnExit = new System.Windows.Forms.ToolStripButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.toolStripBnB.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripBnB
@@ -57,6 +59,7 @@
             this.btnSave,
             this.btnSaveAs,
             this.btnExit});
+            this.toolStripBnB.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStripBnB.Location = new System.Drawing.Point(0, 0);
             this.toolStripBnB.Name = "toolStripBnB";
             this.toolStripBnB.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -68,19 +71,19 @@
             // 
             this.BnBdatabase.ForeColor = System.Drawing.SystemColors.Control;
             this.BnBdatabase.Name = "BnBdatabase";
-            this.BnBdatabase.Size = new System.Drawing.Size(75, 22);
-            this.BnBdatabase.Text = "BnBdatabase";
+            this.BnBdatabase.Size = new System.Drawing.Size(0, 22);
             // 
             // textBoxBnB
             // 
             this.textBoxBnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.textBoxBnB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxBnB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBnB.Font = new System.Drawing.Font("Script MT Bold", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxBnB.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBoxBnB.Location = new System.Drawing.Point(0, 25);
+            this.textBoxBnB.Location = new System.Drawing.Point(10, 10);
             this.textBoxBnB.Multiline = true;
             this.textBoxBnB.Name = "textBoxBnB";
-            this.textBoxBnB.Size = new System.Drawing.Size(634, 258);
+            this.textBoxBnB.Size = new System.Drawing.Size(614, 189);
             this.textBoxBnB.TabIndex = 1;
             // 
             // panel1
@@ -116,6 +119,7 @@
             this.nudNumber.Name = "nudNumber";
             this.nudNumber.Size = new System.Drawing.Size(120, 20);
             this.nudNumber.TabIndex = 3;
+            this.nudNumber.ValueChanged += new System.EventHandler(this.nudNumber_ValueChanged);
             // 
             // btnSaveQuest
             // 
@@ -128,6 +132,7 @@
             this.btnSaveQuest.TabIndex = 2;
             this.btnSaveQuest.Text = "Сохранить";
             this.btnSaveQuest.UseVisualStyleBackColor = false;
+            this.btnSaveQuest.Click += new System.EventHandler(this.btnSaveQuest_Click);
             // 
             // btnDelete
             // 
@@ -140,6 +145,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -152,6 +158,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnNew
             // 
@@ -176,6 +183,7 @@
             // btnSave
             // 
             this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 25F);
             this.btnSave.Image = global::Less7Ex1.Properties.Resources.Actions_floppy_save_icon;
             this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSave.Name = "btnSave";
@@ -191,6 +199,7 @@
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.Size = new System.Drawing.Size(23, 22);
             this.btnSaveAs.Text = "Save As";
+            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
             // 
             // btnExit
             // 
@@ -202,13 +211,24 @@
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panel2.Controls.Add(this.textBoxBnB);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.panel2.Size = new System.Drawing.Size(634, 209);
+            this.panel2.TabIndex = 3;
+            // 
             // BelieveOrNotBelieve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 283);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBoxBnB);
             this.Controls.Add(this.toolStripBnB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BelieveOrNotBelieve";
@@ -219,6 +239,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +262,6 @@
         private System.Windows.Forms.Button btnSaveQuest;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Panel panel2;
     }
 }

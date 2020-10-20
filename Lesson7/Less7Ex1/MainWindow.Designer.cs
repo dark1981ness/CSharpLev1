@@ -57,7 +57,7 @@
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.mainMenu.Size = new System.Drawing.Size(889, 33);
+            this.mainMenu.Size = new System.Drawing.Size(739, 33);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "mainMenu";
             this.mainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainMenu_MouseDown);
@@ -127,6 +127,7 @@
             this.startGame.Name = "startGame";
             this.startGame.Size = new System.Drawing.Size(194, 24);
             this.startGame.Text = "Играть";
+            this.startGame.Click += new System.EventHandler(this.startGame_Click);
             // 
             // bdEdit
             // 
@@ -153,7 +154,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(891, 35);
+            this.panel1.Size = new System.Drawing.Size(741, 35);
             this.panel1.TabIndex = 5;
             // 
             // btnClose
@@ -162,7 +163,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(845, 0);
+            this.btnClose.Location = new System.Drawing.Point(695, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(44, 33);
@@ -179,7 +180,7 @@
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mainPanel.Location = new System.Drawing.Point(0, 41);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(890, 487);
+            this.mainPanel.Size = new System.Drawing.Size(741, 480);
             this.mainPanel.TabIndex = 7;
             // 
             // MainWindow
@@ -187,7 +188,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(891, 530);
+            this.ClientSize = new System.Drawing.Size(741, 525);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
