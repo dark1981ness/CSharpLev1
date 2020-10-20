@@ -29,7 +29,7 @@ namespace Less7Ex1
 
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-            
+            QuestionIndex++;
             panel1.Visible = true;
             btnStartGame.Visible = false;
             LoadGameBase();
@@ -45,34 +45,49 @@ namespace Less7Ex1
 
         private void btnTrue_Click(object sender, EventArgs e)
         {
-            if(gameDB.Count > 0)
+            UserAnswer = true;
+            if (gameDB.Count > 0)
             {
+                QuestionIndex++;
                 GetQuestion();
-                UserAnswer = true;
                 CompareAnswers(UserAnswer, BaseAnswer);
-                gameDB.Remove(DBIndex);
+                
             }
+            else if(gameDB.Count == 0)
+            {
+                CompareAnswers(UserAnswer, BaseAnswer);
+                btnFalse.Enabled = false;
+                btnTrue.Enabled = false;
+            }
+            
         }
 
         private void btnFalse_Click(object sender, EventArgs e)
         {
-            if(gameDB.Count > 0)
+            UserAnswer = false;
+            if (gameDB.Count > 0)
             {
+                QuestionIndex++;
                 GetQuestion();
-                UserAnswer = false;
                 CompareAnswers(UserAnswer, BaseAnswer);
-                gameDB.Remove(DBIndex);
+            }
+            else if (gameDB.Count == 0)
+            {
+                CompareAnswers(UserAnswer, BaseAnswer);
+                btnFalse.Enabled = false;
+                btnTrue.Enabled = false;
             }
         }
 
         private void GetQuestion()
         {
-            QuestionIndex++;
+            
             Random random = new Random();
             DBIndex = random.Next(0, gameDB.Count);
             label2.Text = $"{QuestionIndex} из {GameDBCount}";
             lblQuestion.Text = gameDB[DBIndex].text;
             BaseAnswer = gameDB[DBIndex].trueFalse;
+            gameDB.Remove(DBIndex);
         }
 
         private void CompareAnswers(bool userValue, bool baseValue)

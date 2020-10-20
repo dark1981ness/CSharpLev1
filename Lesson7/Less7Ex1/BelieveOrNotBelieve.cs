@@ -66,16 +66,26 @@ namespace Less7Ex1
         // Обработчик кнопки Удалить
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (nudNumber.Maximum == 1 || database == null) return;
-            database.Remove((int)nudNumber.Value);
-            nudNumber.Maximum--;
-            if (nudNumber.Value > 1) nudNumber.Value = nudNumber.Value;
+            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите удалить вопрос?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (nudNumber.Maximum == 1 || database == null) return;
+                database.Remove((int)nudNumber.Value);
+                nudNumber.Maximum--;
+                if (nudNumber.Value > 1) nudNumber.Value = nudNumber.Value;
+            }
+            
         }
         // Обработчик пункта меню Save
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (database != null) database.Save();
-            else MessageBox.Show("База данных не создана");
+            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите сохранить изменения?","Сохранить", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dialogResult == DialogResult.Yes)
+            {
+                if (database != null) database.Save();
+                else MessageBox.Show("База данных не создана");
+            }
+
         }
         // Обработчик пункта меню Open
         private void btnOpen_Click(object sender, EventArgs e)
@@ -94,8 +104,12 @@ namespace Less7Ex1
         // Обработчик кнопки Сохранить (вопрос)
         private void btnSaveQuest_Click(object sender, EventArgs e)
         {
-            database[(int)nudNumber.Value - 1].text = textBoxBnB.Text;
-            database[(int)nudNumber.Value - 1].trueFalse = cboxTrue.Checked;
+            if (database != null)
+            {
+                database[(int)nudNumber.Value - 1].text = textBoxBnB.Text;
+                database[(int)nudNumber.Value - 1].trueFalse = cboxTrue.Checked;
+            }
+            else MessageBox.Show("База данных не создана");
         }
 
         private void btnSaveAs_Click(object sender, EventArgs e)

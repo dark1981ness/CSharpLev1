@@ -30,6 +30,11 @@
         {
             this.toolStripBnB = new System.Windows.Forms.ToolStrip();
             this.BnBdatabase = new System.Windows.Forms.ToolStripLabel();
+            this.btnNew = new System.Windows.Forms.ToolStripButton();
+            this.btnOpen = new System.Windows.Forms.ToolStripButton();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.btnSaveAs = new System.Windows.Forms.ToolStripButton();
+            this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.textBoxBnB = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboxTrue = new System.Windows.Forms.CheckBox();
@@ -37,11 +42,6 @@
             this.btnSaveQuest = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.ToolStripButton();
-            this.btnOpen = new System.Windows.Forms.ToolStripButton();
-            this.btnSave = new System.Windows.Forms.ToolStripButton();
-            this.btnSaveAs = new System.Windows.Forms.ToolStripButton();
-            this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolStripBnB.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -51,7 +51,9 @@
             // 
             // toolStripBnB
             // 
+            this.toolStripBnB.AutoSize = false;
             this.toolStripBnB.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripBnB.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.toolStripBnB.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BnBdatabase,
             this.btnNew,
@@ -63,7 +65,7 @@
             this.toolStripBnB.Location = new System.Drawing.Point(0, 0);
             this.toolStripBnB.Name = "toolStripBnB";
             this.toolStripBnB.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStripBnB.Size = new System.Drawing.Size(634, 25);
+            this.toolStripBnB.Size = new System.Drawing.Size(634, 45);
             this.toolStripBnB.TabIndex = 0;
             this.toolStripBnB.Text = "toolStrip1";
             // 
@@ -71,7 +73,58 @@
             // 
             this.BnBdatabase.ForeColor = System.Drawing.SystemColors.Control;
             this.BnBdatabase.Name = "BnBdatabase";
-            this.BnBdatabase.Size = new System.Drawing.Size(0, 22);
+            this.BnBdatabase.Size = new System.Drawing.Size(0, 42);
+            // 
+            // btnNew
+            // 
+            this.btnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNew.Image = global::Less7Ex1.Properties.Resources.Actions_file_new_icon;
+            this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(54, 42);
+            this.btnNew.Text = "New";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOpen.Image = global::Less7Ex1.Properties.Resources.Filesystems_folder_open_icon;
+            this.btnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(54, 42);
+            this.btnOpen.Text = "Open";
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.btnSave.Image = global::Less7Ex1.Properties.Resources.Actions_floppy_save_icon;
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(54, 42);
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnSaveAs
+            // 
+            this.btnSaveAs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSaveAs.Image = global::Less7Ex1.Properties.Resources.Actions_file_save_as_icon;
+            this.btnSaveAs.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSaveAs.Name = "btnSaveAs";
+            this.btnSaveAs.Size = new System.Drawing.Size(54, 42);
+            this.btnSaveAs.Text = "Save As";
+            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnExit.Image = global::Less7Ex1.Properties.Resources.Remove_icon;
+            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(54, 42);
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // textBoxBnB
             // 
@@ -83,7 +136,7 @@
             this.textBoxBnB.Location = new System.Drawing.Point(10, 10);
             this.textBoxBnB.Multiline = true;
             this.textBoxBnB.Name = "textBoxBnB";
-            this.textBoxBnB.Size = new System.Drawing.Size(614, 189);
+            this.textBoxBnB.Size = new System.Drawing.Size(614, 169);
             this.textBoxBnB.TabIndex = 1;
             // 
             // panel1
@@ -160,66 +213,15 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnNew
-            // 
-            this.btnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNew.Image = global::Less7Ex1.Properties.Resources.Actions_file_new_icon;
-            this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(23, 22);
-            this.btnNew.Text = "New";
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnOpen
-            // 
-            this.btnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnOpen.Image = global::Less7Ex1.Properties.Resources.Filesystems_folder_open_icon;
-            this.btnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(23, 22);
-            this.btnOpen.Text = "Open";
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 25F);
-            this.btnSave.Image = global::Less7Ex1.Properties.Resources.Actions_floppy_save_icon;
-            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(23, 22);
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnSaveAs
-            // 
-            this.btnSaveAs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSaveAs.Image = global::Less7Ex1.Properties.Resources.Actions_file_save_as_icon;
-            this.btnSaveAs.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.Size = new System.Drawing.Size(23, 22);
-            this.btnSaveAs.Text = "Save As";
-            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnExit.Image = global::Less7Ex1.Properties.Resources.Remove_icon;
-            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(23, 22);
-            this.btnExit.Text = "Exit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panel2.Controls.Add(this.textBoxBnB);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 25);
+            this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(634, 209);
+            this.panel2.Size = new System.Drawing.Size(634, 189);
             this.panel2.TabIndex = 3;
             // 
             // BelieveOrNotBelieve
@@ -242,7 +244,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
