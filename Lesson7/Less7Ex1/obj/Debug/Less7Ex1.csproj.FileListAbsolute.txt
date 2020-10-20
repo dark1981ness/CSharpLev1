@@ -24,3 +24,4 @@ E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.pdb
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.BelieveOrNotBelieve.resources
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.csprojAssemblyReference.cache
 E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.BnBGame.resources
+E:\learning\CSharpLev1\Lesson7\Less7Ex1\obj\Debug\Less7Ex1.MyMessageBox.resources

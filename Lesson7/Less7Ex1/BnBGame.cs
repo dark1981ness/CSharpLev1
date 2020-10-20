@@ -68,6 +68,7 @@ namespace Less7Ex1
                 CompareAnswers(userValue, baseValue);
                 btnFalse.Enabled = false;
                 btnTrue.Enabled = false;
+                ShowMessage();
             }
         }
 
@@ -99,6 +100,39 @@ namespace Less7Ex1
                 lblCompareResult.Text = "X";
             }
         }
+
+        private void ShowMessage()
+        {
+            Form myMessageBox = new MyMessageBox();
+            Panel msgPanel = (Panel)myMessageBox.Controls.Find("pnlMain", true).FirstOrDefault();
+            lblTrueAnswerCount.Text = $"Количество верных ответов:";
+            lblTrueAnswerCount.Location = new Point(76, 108);
+            lblFalseAnswerCount.Text = $"Количество неверных ответов:";
+            lblFalseAnswerCount.Location = new Point(76, 145);
+            lblTrueCount.Text = $"{RightAnswersCount}";
+            lblTrueCount.Location = new Point(351, 108);
+            lblFalseCount.Text = $"{WrongAnswersCount}";
+            lblFalseCount.Location = new Point(351, 145);
+            Label lblH = new Label();
+            lblH.Text = lblHeader.Text;
+            lblH.Font = new Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            lblH.Location = new Point(192, 3);
+            lblH.Size = new Size(151, 20);
+            Label gameOver = new Label();
+            gameOver.Text = $"!!!ИГРА ЗАКОНЧЕНА!!!";
+            gameOver.Location = new Point(180, 36);
+            gameOver.Size = new Size(180, 20);
+            gameOver.Font = new Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+
+            msgPanel.Controls.Add(lblTrueAnswerCount);
+            msgPanel.Controls.Add(lblTrueCount);
+            msgPanel.Controls.Add(lblFalseAnswerCount);
+            msgPanel.Controls.Add(lblFalseCount);
+            msgPanel.Controls.Add(lblH);
+            msgPanel.Controls.Add(gameOver);
+            myMessageBox.Show();
+        }
+
         
     }
 }

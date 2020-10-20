@@ -89,16 +89,6 @@ namespace Less7Ex1
             }
         }
 
-
-        private void CloseFormsInsidePanel()
-        {
-            
-            if (ActiveMdiChild != null)
-            {
-                ActiveMdiChild.Dispose();
-            }
-        }
-
         #region DragMove метод, не очень удачный, скорее всего
         private void mainMenu_MouseDown(object sender, MouseEventArgs e)
         {
