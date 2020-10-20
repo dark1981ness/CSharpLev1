@@ -46,34 +46,26 @@ namespace Less7Ex1
         private void btnTrue_Click(object sender, EventArgs e)
         {
             UserAnswer = true;
-            if (gameDB.Count > 0)
-            {
-                QuestionIndex++;
-                GetQuestion();
-                CompareAnswers(UserAnswer, BaseAnswer);
-                
-            }
-            else if(gameDB.Count == 0)
-            {
-                CompareAnswers(UserAnswer, BaseAnswer);
-                btnFalse.Enabled = false;
-                btnTrue.Enabled = false;
-            }
-            
+            CheckAnswer(UserAnswer, BaseAnswer);
         }
 
         private void btnFalse_Click(object sender, EventArgs e)
         {
             UserAnswer = false;
+            CheckAnswer(UserAnswer,BaseAnswer);
+        }
+
+        private void CheckAnswer(bool userValue, bool baseValue)
+        {
             if (gameDB.Count > 0)
             {
                 QuestionIndex++;
                 GetQuestion();
-                CompareAnswers(UserAnswer, BaseAnswer);
+                CompareAnswers(userValue, baseValue);
             }
             else if (gameDB.Count == 0)
             {
-                CompareAnswers(UserAnswer, BaseAnswer);
+                CompareAnswers(userValue, baseValue);
                 btnFalse.Enabled = false;
                 btnTrue.Enabled = false;
             }
@@ -85,7 +77,7 @@ namespace Less7Ex1
             Random random = new Random();
             DBIndex = random.Next(0, gameDB.Count);
             label2.Text = $"{QuestionIndex} из {GameDBCount}";
-            lblQuestion.Text = gameDB[DBIndex].text;
+            textBoxQuestion.Text = gameDB[DBIndex].text;
             BaseAnswer = gameDB[DBIndex].trueFalse;
             gameDB.Remove(DBIndex);
         }

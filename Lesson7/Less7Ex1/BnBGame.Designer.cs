@@ -39,9 +39,11 @@
             this.lblCompareResult = new System.Windows.Forms.Label();
             this.btnFalse = new System.Windows.Forms.Button();
             this.btnTrue = new System.Windows.Forms.Button();
-            this.lblQuestion = new System.Windows.Forms.Label();
             this.btnStartGame = new System.Windows.Forms.Button();
+            this.textBoxQuestion = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -60,6 +62,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblFalseCount);
@@ -69,7 +72,6 @@
             this.panel1.Controls.Add(this.lblCompareResult);
             this.panel1.Controls.Add(this.btnFalse);
             this.panel1.Controls.Add(this.btnTrue);
-            this.panel1.Controls.Add(this.lblQuestion);
             this.panel1.Controls.Add(this.lblHeader);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -191,17 +193,6 @@
             this.btnTrue.UseVisualStyleBackColor = false;
             this.btnTrue.Click += new System.EventHandler(this.btnTrue_Click);
             // 
-            // lblQuestion
-            // 
-            this.lblQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblQuestion.AutoSize = true;
-            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblQuestion.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblQuestion.Location = new System.Drawing.Point(11, 81);
-            this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(0, 20);
-            this.lblQuestion.TabIndex = 1;
-            // 
             // btnStartGame
             // 
             this.btnStartGame.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -217,6 +208,31 @@
             this.btnStartGame.UseVisualStyleBackColor = false;
             this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
+            // textBoxQuestion
+            // 
+            this.textBoxQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.textBoxQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxQuestion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxQuestion.ForeColor = System.Drawing.SystemColors.Control;
+            this.textBoxQuestion.Location = new System.Drawing.Point(10, 10);
+            this.textBoxQuestion.Multiline = true;
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.ReadOnly = true;
+            this.textBoxQuestion.Size = new System.Drawing.Size(433, 119);
+            this.textBoxQuestion.TabIndex = 19;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panel2.Controls.Add(this.textBoxQuestion);
+            this.panel2.Location = new System.Drawing.Point(15, 73);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.panel2.Size = new System.Drawing.Size(453, 139);
+            this.panel2.TabIndex = 20;
+            // 
             // BnBGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +246,8 @@
             this.Text = "BnBGame";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -238,7 +256,6 @@
 
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.Button btnFalse;
         private System.Windows.Forms.Button btnTrue;
         private System.Windows.Forms.Label lblCompareResult;
@@ -249,5 +266,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStartGame;
+        private System.Windows.Forms.TextBox textBoxQuestion;
+        private System.Windows.Forms.Panel panel2;
     }
 }
