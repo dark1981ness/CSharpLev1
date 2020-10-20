@@ -20,6 +20,11 @@ namespace Less7Ex1
             InitializeComponent();
         }
 
+        private void BelieveOrNotBelieve_Load(object sender, EventArgs e)
+        {
+            toolStripBnB.Renderer = new ToolStripProfessionalRenderer(new MyColorTable());
+        }
+
         //Обработчик пункта меню Exit
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -91,6 +96,7 @@ namespace Less7Ex1
             database[(int)nudNumber.Value - 1].text = textBoxBnB.Text;
             database[(int)nudNumber.Value - 1].trueFalse = cboxTrue.Checked;
         }
+
         
     }
 }

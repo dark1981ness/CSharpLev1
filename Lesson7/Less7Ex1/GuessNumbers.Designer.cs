@@ -46,6 +46,7 @@
             // 
             // lblHeader
             // 
+            this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblHeader.ForeColor = System.Drawing.SystemColors.Control;
@@ -59,6 +60,7 @@
             // 
             // btnStartGame
             // 
+            this.btnStartGame.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnStartGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -86,7 +88,7 @@
             this.mainPanel.Controls.Add(this.userNumberTextBox);
             this.mainPanel.Controls.Add(this.btnStartGame);
             this.mainPanel.Controls.Add(this.lblHeader);
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(465, 480);
@@ -94,6 +96,7 @@
             // 
             // lblUserNumber
             // 
+            this.lblUserNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUserNumber.AutoSize = true;
             this.lblUserNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblUserNumber.ForeColor = System.Drawing.SystemColors.Control;
@@ -105,7 +108,7 @@
             // 
             // btnRestart
             // 
-            this.btnRestart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestart.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnRestart.Enabled = false;
             this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -146,7 +149,7 @@
             // 
             // lblHiddenNumber
             // 
-            this.lblHiddenNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHiddenNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHiddenNumber.AutoSize = true;
             this.lblHiddenNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblHiddenNumber.ForeColor = System.Drawing.SystemColors.Control;
@@ -158,6 +161,7 @@
             // 
             // lblCompareResult
             // 
+            this.lblCompareResult.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCompareResult.AutoSize = true;
             this.lblCompareResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCompareResult.ForeColor = System.Drawing.SystemColors.Control;
@@ -170,6 +174,7 @@
             // 
             // lblResult
             // 
+            this.lblResult.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblResult.AutoSize = true;
             this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblResult.ForeColor = System.Drawing.SystemColors.Control;
@@ -182,6 +187,7 @@
             // 
             // btnUserTurn
             // 
+            this.btnUserTurn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnUserTurn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnUserTurn.Enabled = false;
             this.btnUserTurn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -198,6 +204,7 @@
             // 
             // lblTextBoxHeader
             // 
+            this.lblTextBoxHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTextBoxHeader.AutoSize = true;
             this.lblTextBoxHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblTextBoxHeader.ForeColor = System.Drawing.SystemColors.Control;
@@ -210,6 +217,7 @@
             // 
             // userNumberTextBox
             // 
+            this.userNumberTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userNumberTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.userNumberTextBox.Enabled = false;
             this.userNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

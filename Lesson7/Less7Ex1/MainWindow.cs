@@ -28,33 +28,34 @@ namespace Less7Ex1
         private void MainWindow_Load(object sender, EventArgs e)
         {
             mainMenu.Renderer = new ToolStripProfessionalRenderer(new MyColorTable());
+            
         }
 
         private void Doubler_Click(object sender, EventArgs e)
         {
-            CloseFormsInsidePanel();
-            Form doubler = new Doubler(1, 100) { Dock = DockStyle.Fill, TopLevel = true, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            doubler.MdiParent = this;
+            CloseFormsInsidePanel(mainPanel);
+            Form doubler = new Doubler(1, 100) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            this.mainPanel.Controls.Add(doubler);
             doubler.Show();
             doubler.Location = new Point(0, 0);
         }
 
         private void GuessNumber_Click(object sender, EventArgs e)
         {
-            CloseFormsInsidePanel();
-            Form guessNumbers = new GuessNumbers(5, 0, 100) { Dock = DockStyle.Fill, TopLevel = true, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            guessNumbers.MdiParent = this;
+            CloseFormsInsidePanel(mainPanel);
+            Form guessNumbers = new GuessNumbers(5, 0, 100) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            this.mainPanel.Controls.Add(guessNumbers);
             guessNumbers.Show();
             guessNumbers.Location = new Point(0, 0);
         }
 
         private void bdEdit_Click(object sender, EventArgs e)
         {
-            CloseFormsInsidePanel();
-            Form bnbEdit = new BelieveOrNotBelieve() { Dock = DockStyle.Fill, TopLevel = true, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            bnbEdit.MdiParent = this;
-            ToolStripManager.Merge((ToolStrip)bnbEdit.Controls.Find("toolStripBnB", true).FirstOrDefault() , this.mainMenu);
-            bnbEdit.FormClosed += (s, ev) => { ToolStripManager.RevertMerge(this.mainMenu, (ToolStrip)bnbEdit.Controls.Find("toolStripBnB", true).FirstOrDefault()); };
+            CloseFormsInsidePanel(mainPanel);
+            Form bnbEdit = new BelieveOrNotBelieve() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            this.mainPanel.Controls.Add(bnbEdit);
+            //ToolStripManager.Merge((ToolStrip)bnbEdit.Controls.Find("toolStripBnB", true).FirstOrDefault() , this.toolStrip1);
+            //bnbEdit.FormClosed += (s, ev) => { ToolStripManager.RevertMerge(this.toolStrip1, (ToolStrip)bnbEdit.Controls.Find("toolStripBnB", true).FirstOrDefault()); };
             //bnbEdit.Controls.Remove((ToolStrip)bnbEdit.Controls.Find("toolStripBnB", false).FirstOrDefault());
             bnbEdit.Show();
             bnbEdit.Location = new Point(0, 0);

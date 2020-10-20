@@ -38,11 +38,11 @@
             this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.textBoxBnB = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSaveQuest = new System.Windows.Forms.Button();
-            this.nudNumber = new System.Windows.Forms.NumericUpDown();
             this.cboxTrue = new System.Windows.Forms.CheckBox();
+            this.nudNumber = new System.Windows.Forms.NumericUpDown();
+            this.btnSaveQuest = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.toolStripBnB.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
@@ -123,7 +123,10 @@
             // 
             // textBoxBnB
             // 
+            this.textBoxBnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.textBoxBnB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxBnB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBnB.ForeColor = System.Drawing.SystemColors.Control;
             this.textBoxBnB.Location = new System.Drawing.Point(0, 25);
             this.textBoxBnB.Multiline = true;
             this.textBoxBnB.Name = "textBoxBnB";
@@ -132,6 +135,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
             this.panel1.Controls.Add(this.cboxTrue);
             this.panel1.Controls.Add(this.nudNumber);
             this.panel1.Controls.Add(this.btnSaveQuest);
@@ -143,49 +147,61 @@
             this.panel1.Size = new System.Drawing.Size(634, 49);
             this.panel1.TabIndex = 2;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 14);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Добавить";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(135, 14);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Удалить";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveQuest
-            // 
-            this.btnSaveQuest.Location = new System.Drawing.Point(216, 14);
-            this.btnSaveQuest.Name = "btnSaveQuest";
-            this.btnSaveQuest.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveQuest.TabIndex = 2;
-            this.btnSaveQuest.Text = "Сохранить";
-            this.btnSaveQuest.UseVisualStyleBackColor = true;
-            // 
-            // nudNumber
-            // 
-            this.nudNumber.Location = new System.Drawing.Point(392, 17);
-            this.nudNumber.Name = "nudNumber";
-            this.nudNumber.Size = new System.Drawing.Size(120, 20);
-            this.nudNumber.TabIndex = 3;
-            // 
             // cboxTrue
             // 
             this.cboxTrue.AutoSize = true;
+            this.cboxTrue.ForeColor = System.Drawing.SystemColors.Control;
             this.cboxTrue.Location = new System.Drawing.Point(518, 18);
             this.cboxTrue.Name = "cboxTrue";
             this.cboxTrue.Size = new System.Drawing.Size(64, 17);
             this.cboxTrue.TabIndex = 4;
             this.cboxTrue.Text = "Правда";
             this.cboxTrue.UseVisualStyleBackColor = true;
+            // 
+            // nudNumber
+            // 
+            this.nudNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(45)))));
+            this.nudNumber.ForeColor = System.Drawing.SystemColors.Control;
+            this.nudNumber.Location = new System.Drawing.Point(392, 17);
+            this.nudNumber.Name = "nudNumber";
+            this.nudNumber.Size = new System.Drawing.Size(120, 20);
+            this.nudNumber.TabIndex = 3;
+            // 
+            // btnSaveQuest
+            // 
+            this.btnSaveQuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnSaveQuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveQuest.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSaveQuest.Location = new System.Drawing.Point(216, 14);
+            this.btnSaveQuest.Name = "btnSaveQuest";
+            this.btnSaveQuest.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveQuest.TabIndex = 2;
+            this.btnSaveQuest.Text = "Сохранить";
+            this.btnSaveQuest.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Location = new System.Drawing.Point(135, 14);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Удалить";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.Location = new System.Drawing.Point(12, 14);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Добавить";
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // BelieveOrNotBelieve
             // 
@@ -198,6 +214,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BelieveOrNotBelieve";
             this.Text = "BelieveOrNotBelieve";
+            this.Load += new System.EventHandler(this.BelieveOrNotBelieve_Load);
             this.toolStripBnB.ResumeLayout(false);
             this.toolStripBnB.PerformLayout();
             this.panel1.ResumeLayout(false);
